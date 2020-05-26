@@ -20,6 +20,7 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
     Button verServicios;
     Button registrar;
+    Button emp;
 
     EditText username;
     EditText password;
@@ -30,6 +31,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         registrar=findViewById(R.id.button2);
+
+        emp=findViewById(R.id.button12);
+        emp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,EmpLogin.class);
+                startActivity(i);
+            }
+        });
+
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

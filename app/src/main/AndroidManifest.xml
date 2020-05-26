@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".AddServicio"></activity>
+        <activity android:name=".EmpEmpDetalle" />
+        <activity android:name=".EmpServicioDetalle" />
+        <activity android:name=".EmpMenu" />
+        <activity android:name=".EmpLogin" />
         <activity android:name=".ServicioListado" />
         <activity android:name=".EmpresaDetalle" />
         <activity android:name=".ServicioDetalle" />

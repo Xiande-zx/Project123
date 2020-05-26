@@ -88,7 +88,7 @@ public class ServicioListado extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 ArrayList<Service> list1 = new ArrayList<>();
                 for (int i = 0; i<list.size();i++){
-                    if (list.get(i).getType().contains(s.toString())){
+                    if (list.get(i).getType().toLowerCase().contains(s.toString().toLowerCase())){
                         list1.add(list.get(i));
                     }
                 }

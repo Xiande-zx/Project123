@@ -36,6 +36,8 @@ public class USAdapter extends BaseAdapter {
         TextView name = miVista.findViewById(R.id.ServiceName);
         name.setText(service.getType());
 
+        TextView des = miVista.findViewById(R.id.ServiceDes);
+        des.setText(service.getDescription());
 
         return miVista;
     }

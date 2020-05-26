@@ -46,7 +46,7 @@ public class UsuarioRegistrar extends AppCompatActivity {
         Rphone=findViewById(R.id.editText6);
         Remail=findViewById(R.id.editText4);
 
-        detalleUsuario = (Button)findViewById(R.id.button2);
+        detalleUsuario = (Button)findViewById(R.id.button3);
 
         detalleUsuario.setOnClickListener(new View.OnClickListener() {
             @Override

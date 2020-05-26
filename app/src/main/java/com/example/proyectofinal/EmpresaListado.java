@@ -31,7 +31,7 @@ public class EmpresaListado extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_empresa_listado);
-        verDetalleUsuario=(Button)findViewById(R.id.button3);
+        verDetalleUsuario=(Button)findViewById(R.id.button8);
         buscador =(EditText) findViewById(R.id.editText8);
         listView=findViewById(R.id.listEmp);
 
@@ -75,7 +75,7 @@ public class EmpresaListado extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 ArrayList<Emp> list1 = new ArrayList<>();
                 for (int i = 0; i<list.size();i++){
-                    if (list.get(i).getName().contains(s.toString())){
+                    if (list.get(i).getName().toLowerCase().contains(s.toString().toLowerCase())){
                         list1.add(list.get(i));
                     }
                 }

@@ -1,18 +1,22 @@
 [
   {
-          "id" : 10,
-          "name" : "Empresa",
-          "description" : "description10",
-        "number" : 123123,
-        "email" : "emp@emp.com",
-        "adress" : "adressa"
+    "id" : 10,
+    "UserName" : "emp1",
+    "password" : "emp1",
+    "name" : "Mercadona",
+    "description" : "Supermercado",
+    "number" : 123123,
+    "email" : "emp@emp.com",
+    "adress" : "adressa"
   },
-{
-"id" : 15,
-"name" : "Empresa2",
-"description" : "description10",
-"number" : 12312243,
-"email" : "emp@emp.com",
-"adress" : "adressa"
-}
+  {
+    "id" : 15,
+    "UserName" : "emp2",
+    "password" : "emp2",
+    "name" : "Empresa2",
+    "description" : "description10",
+    "number" : 12312243,
+    "email" : "emp@emp.com",
+    "adress" : "adressa"
+  }
 ]

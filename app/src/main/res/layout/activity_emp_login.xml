@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmpLogin">
+
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="378dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="496dp"
+        android:backgroundTint="#FFFFFF"
+        android:drawableLeft="@drawable/icon_username_foreground"
+        android:ems="10"
+        android:gravity="center|left"
+        android:hint="@string/edittextNombreUsuario"
+        android:inputType="textPersonName"
+        android:textColorHint="#00BCD4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/Epassword"
+        android:layout_width="378dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFFFFF"
+        android:drawableLeft="@drawable/icon_password_foreground"
+        android:ems="10"
+        android:gravity="center|left"
+        android:hint="@string/edittextContraseña"
+        android:inputType="textPassword"
+        android:textColorHint="#00BCD4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.397" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="183dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/btn_dos_ripple"
+        android:drawableLeft="@drawable/icon_check_foreground"
+        android:gravity="center|left"
+        android:text="@string/buttonIniciarSesion"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.551" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,8 @@ import java.util.List;
 public class Emp {
 
     private Integer id;
+    private String UserName;
+    private String password;
     private String name;
     private String description;
     private Integer number;
@@ -73,4 +75,19 @@ public class Emp {
         this.adress = direccion;
     }
 
+    public String getUserName() {
+        return UserName;
+    }
+
+    public void setUserName(String userName) {
+        UserName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
