@@ -1,0 +1,14 @@
+[
+  {
+        "id" : 1,
+        "userName" : "Xiande",
+        "password" : "xiande",
+        "name" : "Xiande",
+        "surname" : "Qiu",
+        "phone" : 12313,
+        "age" : 1,
+        "poblation" : "bcn",
+        "email" : "email@emailk.com",
+        "inmune" : true
+  }
+]

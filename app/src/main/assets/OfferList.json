@@ -1,0 +1,12 @@
+[
+  {
+    "id" : 2,
+    "type" : "tipo2",
+    "description" : "descripcio2"
+  },
+  {
+    "id" : 3,
+    "type" : "tipo3",
+    "description" : "descripci3"
+  }
+]

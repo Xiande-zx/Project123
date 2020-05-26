@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">ProyectoFinal</string>
+    <!--ACTIVITY_MAIN-->
+    <string name="edittextNombreUsuario">Nombre usuario</string>
+    <string name="edittextContraseña">Contraseña</string>
+    <string name="buttonIniciarSesion">Iniciar sesion</string>
+    <string name="edittextRegistrate">Registrate</string>
+
+    <!--ACTIVITY_USUARIO_REGISTRAR-->
+    <string name="edittextNombreUsuario2">Nombre Usuario</string>
+    <string name="edittextEmail">Email</string>
+    <string name="edittextContraseña2">Contraseña</string>
+    <string name="edittextTelefono">Telefono</string>
+    <string name="buttonRegistrar">Registrar</string>
+
+    <!--ACTIVITY_USUARIO_DETALLE-->
+    <string name="buttonVerMenu">Ver menu</string>
+    <string name="buttonModificar">Modificar</string>
+
+    <!--ACTIVITY_USUARIO_MENU-->
+    <string name="edittextBuscadorServicios">Buscar servicio</string>
+
+    <!--ACTIVITY_EMPRESA_LISTADO-->
+    <string name="edittextBuscadorEmpresa">Buscar empresa</string>
+
+    <!--ACTIVITY_EMPRESA_LISTADO-->
+    <string name="buttonContactar">Contactar</string>
+
+    <!--ACTIVITY_EMPRESA_DETALLE-->
+    <string name="buttonListaServicios">Ver servicios</string>
+
+    <!--ACTIVITY_SERVICIO_LISTADO-->
+    <string name="edittextBuscadorServicios2">Buscar servicios</string>
+
+</resources>

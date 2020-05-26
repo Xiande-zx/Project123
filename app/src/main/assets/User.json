@@ -1,0 +1,10 @@
+[
+  {
+        "id" : 1,
+        "userName" : "Xiande",
+        "password" : "xiande",
+        "phone" : 12313,
+        "email" : "email@emailk.com",
+        "inmune" : true
+  }
+]

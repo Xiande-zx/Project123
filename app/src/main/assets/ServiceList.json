@@ -1,0 +1,13 @@
+[
+  {
+    "id" : 4,
+    "type" : "servicio1",
+    "description" : "descripcio4",
+    "idEmp" : 10
+  },{
+  "id" : 5,
+  "type" : "servicio2",
+  "description" : "descripcio5",
+  "idEmp" : 10
+}
+]
