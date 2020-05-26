@@ -44,7 +44,7 @@ public class EmpMenu extends AppCompatActivity {
         search=findViewById(R.id.buscador1);
         listView=findViewById(R.id.lista1);
 
-        add=findViewById(R.id.add);
+        add=findViewById(R.id.button16);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

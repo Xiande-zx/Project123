@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.proyectofinal.clase.User;
+import com.google.gson.Gson;
 
 public class UsuarioRegistrar extends AppCompatActivity {
     private String userName;
@@ -35,6 +36,8 @@ public class UsuarioRegistrar extends AppCompatActivity {
     private EditText RuserName;
     private EditText Rpassword;
 
+    Gson gson = new Gson();
+
     Button detalleUsuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,17 +51,22 @@ public class UsuarioRegistrar extends AppCompatActivity {
 
         detalleUsuario = (Button)findViewById(R.id.button3);
 
+        User user = gson.fromJson(getIntent().getStringExtra("userJson"), User.class);
+        if(user!=null){
+            getIntent().getSerializableExtra("userJson");
+            user = gson.fromJson(getIntent().getStringExtra("userJson"), User.class);
+            RuserName.setText(user.getUserName());
+            Rpassword.setText(user.getPassword());
+            Rphone.setText(user.getTelefono());
+            Remail.setText(user.getEmail());
+        }
+
         detalleUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 userName=RuserName.getText().toString();
                 password=Rpassword.getText().toString();
-                name=Rname.getText().toString();
-                surname=Rsurname.getText().toString();
                 phone=Rphone.getText().toString();
-                String agee = Rage.getText().toString();
-                age=Integer.parseInt(agee);
-                poblation=Rpoblation.getText().toString();
                 email=Remail.getText().toString();
 
                 if (userName.isEmpty()){
@@ -76,8 +84,7 @@ public class UsuarioRegistrar extends AppCompatActivity {
                 }
             }
         });
-    }
-    public void error(String str){
+    }public void error(String str){
         Context context = getApplicationContext();
         CharSequence text = "El camp "+str+" no pot estar buit!";
         int duration = Toast.LENGTH_SHORT;
@@ -85,4 +92,5 @@ public class UsuarioRegistrar extends AppCompatActivity {
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
     }
+
 }

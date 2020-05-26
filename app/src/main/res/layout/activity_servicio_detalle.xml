@@ -82,7 +82,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/type"
         android:layout_width="378dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -101,5 +101,5 @@
         android:text="@string/buttonContactar"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintTop_toBottomOf="@+id/type" />
 </androidx.constraintlayout.widget.ConstraintLayout>
