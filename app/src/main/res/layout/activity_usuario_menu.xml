@@ -51,6 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button6" />
 
     <ListView
+        android:id="@+id/lista"
         android:layout_width="382dp"
         android:layout_height="504dp"
         android:layout_marginStart="16dp"

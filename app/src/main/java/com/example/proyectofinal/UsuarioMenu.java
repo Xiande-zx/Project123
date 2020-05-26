@@ -30,10 +30,10 @@ public class UsuarioMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario_menu);
-        buscador =(EditText) findViewById(R.id.editText9);
+        buscador =(EditText) findViewById(R.id.editText7);
 
-        detalleUsuario =(Button)findViewById(R.id.button4);
-        empresaServicios =(Button)findViewById(R.id.button5);
+        detalleUsuario =(Button)findViewById(R.id.button7);
+        empresaServicios =(Button)findViewById(R.id.button6);
         listView=findViewById(R.id.lista);
 
         Intent myIntent = getIntent();

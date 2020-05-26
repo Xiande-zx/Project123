@@ -19,6 +19,7 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
     Button verServicios;
+    Button registrar;
 
     EditText username;
     EditText password;
@@ -28,6 +29,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        registrar=findViewById(R.id.button2);
+        registrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,UsuarioRegistrar.class);
+                startActivity(i);
+            }
+        });
         verServicios= (Button) findViewById(R.id.button);
         verServicios.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -31,7 +31,7 @@ public class EmpresaDetalle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_empresa_detalle);
-        verListadoServicios = (Button)findViewById(R.id.button6);
+        verListadoServicios = (Button)findViewById(R.id.button10);
 
         name=findViewById(R.id.textView20);
         number=findViewById(R.id.textView24);
