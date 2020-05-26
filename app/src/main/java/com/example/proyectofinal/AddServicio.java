@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,8 +16,8 @@ import com.google.gson.Gson;
 
 public class AddServicio extends AppCompatActivity {
 
-    TextView type;
-    TextView description;
+    EditText type;
+    EditText description;
 
     String ttype;
     String ddespriprion;
