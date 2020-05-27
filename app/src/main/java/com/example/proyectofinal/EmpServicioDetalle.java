@@ -26,10 +26,10 @@ public class EmpServicioDetalle extends AppCompatActivity {
         Gson gson = new Gson();
         service =gson.fromJson(getIntent().getStringExtra("serviceJson"), Service.class);
 
-        type=findViewById(R.id.textView12);
+        type=findViewById(R.id.textView18);
         type.setText(service.getType());
 
-        description=findViewById(R.id.textView16);
+        description=findViewById(R.id.textView27);
         description.setText(service.getDescription());
     }
 }

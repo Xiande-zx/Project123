@@ -33,7 +33,15 @@ public class ServicioListado extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_servicio_listado);
         buscador =(EditText) findViewById(R.id.editText9);
+        crearServicio=findViewById(R.id.button19);
 
+        crearServicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ServicioListado.this,AddServicio.class);
+                startActivity(i);
+            }
+        });
         Intent intent = getIntent();
         temp = intent.getIntExtra("idEmp", 0);
 

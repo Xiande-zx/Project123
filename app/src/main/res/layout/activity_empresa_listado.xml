@@ -8,22 +8,22 @@
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="65dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="328dp"
-        android:layout_marginLeft="328dp"
+        android:layout_width="51dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/btn_dos_ripple_user"
         android:drawableBottom="@drawable/user4"
         android:textColor="#17202A"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText8"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText8"
-        android:layout_width="378dp"
-        android:layout_height="50dp"
+        android:layout_width="291dp"
+        android:layout_height="51dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
@@ -34,15 +34,15 @@
         android:inputType="textPersonName"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/listEmp"
         android:layout_width="382dp"
         android:layout_height="504dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText8" />
 

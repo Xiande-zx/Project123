@@ -30,10 +30,10 @@ public class EmpEmpDetalle extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emp_emp_detalle);
 
-        name=findViewById(R.id.textView20);
-        number=findViewById(R.id.textView24);
-        email=findViewById(R.id.textView25);
-        adress=findViewById(R.id.textView26);
+        name=findViewById(R.id.textView30);
+        number=findViewById(R.id.textView31);
+        email=findViewById(R.id.textView32);
+        adress=findViewById(R.id.textView33);
 
         Intent myIntent = getIntent();
         getIntent().getSerializableExtra("userJson");

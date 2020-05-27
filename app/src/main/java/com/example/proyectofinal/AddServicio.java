@@ -29,8 +29,8 @@ public class AddServicio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_servicio);
 
-        type=findViewById(R.id.textView14);
-        description=findViewById(R.id.textView17);
+        type=findViewById(R.id.editText10);
+        description=findViewById(R.id.editText11);
         add=findViewById(R.id.button15);
 
         final Intent intent = getIntent();
