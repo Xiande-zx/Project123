@@ -17,6 +17,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
+
 public class MainActivity extends AppCompatActivity {
     Button verServicios;
     Button registrar;
@@ -26,10 +28,12 @@ public class MainActivity extends AppCompatActivity {
     EditText password;
     String userNameStr;
     String passwordStr;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         registrar=findViewById(R.id.button2);
 
         emp=findViewById(R.id.button12);

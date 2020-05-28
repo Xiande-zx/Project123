@@ -2,14 +2,28 @@ package com.example.proyectofinal.clase;
 
 import android.content.Intent;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class User {
+
+    @SerializedName("id")
+    @Expose
     private Integer id;
-
+    @SerializedName("userName")
+    @Expose
     private String userName;
+    @SerializedName("password")
+    @Expose
     private String password;
-
+    @SerializedName("phone")
+    @Expose
     private String phone;
+    @SerializedName("email")
+    @Expose
     private String email;
+    @SerializedName("inmune")
+    @Expose
     private boolean inmune;
 
 

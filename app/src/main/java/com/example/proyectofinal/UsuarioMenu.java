@@ -21,15 +21,20 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class UsuarioMenu extends AppCompatActivity {
     Button detalleUsuario, empresaServicios;
     EditText buscador;
 
     private ListView listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario_menu);
+
         buscador =(EditText) findViewById(R.id.editText7);
 
         detalleUsuario =(Button)findViewById(R.id.button7);

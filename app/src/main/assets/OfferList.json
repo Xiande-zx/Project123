@@ -1,12 +1,1 @@
-[
-  {
-    "id" : 2,
-    "type" : "tipo2",
-    "description" : "descripcio2"
-  },
-  {
-    "id" : 3,
-    "type" : "tipo3",
-    "description" : "descripci3"
-  }
-]
+http://ec2-54-160-74-68.compute-1.amazonaws.com:8080/controlApp/Emp/1

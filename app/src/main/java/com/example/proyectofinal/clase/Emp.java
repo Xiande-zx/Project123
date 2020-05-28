@@ -1,17 +1,36 @@
 package com.example.proyectofinal.clase;
 
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class Emp {
 
+    @SerializedName("id")
+    @Expose
     private Integer id;
+    @SerializedName("UserName")
+    @Expose
     private String UserName;
+    @SerializedName("password")
+    @Expose
     private String password;
+    @SerializedName("name")
+    @Expose
     private String name;
+    @SerializedName("description")
+    @Expose
     private String description;
+    @SerializedName("number")
+    @Expose
     private Integer number;
+    @SerializedName("email")
+    @Expose
     private String email;
+    @SerializedName("adress")
+    @Expose
     private String adress;
 
     public Emp(){

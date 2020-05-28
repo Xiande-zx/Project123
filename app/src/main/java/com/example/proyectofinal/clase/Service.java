@@ -1,11 +1,21 @@
 package com.example.proyectofinal.clase;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Service {
 
+    @SerializedName("id")
+    @Expose
     private Integer id;
+    @SerializedName("type")
+    @Expose
     private String type;
+    @SerializedName("description")
+    @Expose
     private String description;
-
+    @SerializedName("idEmp")
+    @Expose
     private Integer idEmp;
 
     public Service(){
