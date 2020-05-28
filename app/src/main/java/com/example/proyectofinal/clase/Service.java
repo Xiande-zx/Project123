@@ -7,7 +7,7 @@ public class Service {
 
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private Long id;
     @SerializedName("type")
     @Expose
     private String type;
@@ -22,18 +22,18 @@ public class Service {
 
     }
 
-    public Service(Integer id, String type, String description, Integer idEmp) {
+    public Service(Long id, String type, String description, Integer idEmp) {
         this.id = id;
         this.type = type;
         this.description = description;
         this.idEmp = idEmp;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

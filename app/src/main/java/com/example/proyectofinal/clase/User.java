@@ -9,7 +9,7 @@ public class User {
 
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private Long id;
     @SerializedName("userName")
     @Expose
     private String userName;
@@ -31,8 +31,7 @@ public class User {
 
     }
 
-    public User(Integer id, String userName, String password, String phone, String email, boolean inmune) {
-        this.id = id;
+    public User(String userName, String password, String phone, String email, boolean inmune) {
         this.userName = userName;
         this.password = password;
         this.phone = phone;
@@ -40,11 +39,11 @@ public class User {
         this.inmune = inmune;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

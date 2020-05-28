@@ -10,7 +10,7 @@ public class Emp {
 
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private Long id;
     @SerializedName("UserName")
     @Expose
     private String UserName;
@@ -37,7 +37,7 @@ public class Emp {
 
     }
 
-    public Emp(Integer id, String name, String description, Integer number, String email, String adress) {
+    public Emp(Long id, String name, String description, Integer number, String email, String adress) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -46,11 +46,11 @@ public class Emp {
         this.adress = adress;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -4,14 +4,31 @@ import com.example.proyectofinal.clase.Emp;
 import com.example.proyectofinal.clase.User;
 
 import java.util.ArrayList;
-import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface UserInterface {
-    @GET("/controlApp/Emp/")
-    Call<ArrayList<Emp>> listEmp();
-}
 
+    @GET("/controlApp/User/")
+    Call<ArrayList<User>> listEmp();
+
+    @GET("/controlApp/User/{id}")
+    Call<User> getUser(@Path("id") Long id);
+
+    @POST("/controlApp/User/")
+    Call<ResponseBody> postUser(@Body User user);
+
+    @DELETE("/controlApp/User/")
+    Call<ResponseBody> deleteUser(@Body User user);
+
+    @PUT("/controlApp/User/")
+    Call<ResponseBody> putUser(@Body User user);
+
+}

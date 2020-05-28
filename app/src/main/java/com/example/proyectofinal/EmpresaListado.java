@@ -13,15 +13,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.proyectofinal.Interface.UserInterface;
+import com.example.proyectofinal.Interface.EmpInterface;
 import com.example.proyectofinal.UserAdapter.EmpAdapter;
 import com.example.proyectofinal.clase.Emp;
-import com.google.gson.Gson;
 
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -68,7 +65,7 @@ public class EmpresaListado extends AppCompatActivity {
                     .build();
         }
 
-        UserInterface service = retrofit.create(UserInterface.class);
+        EmpInterface service = retrofit.create(EmpInterface.class);
 
         Call<ArrayList<Emp>> repos = service.listEmp();
 
@@ -99,7 +96,7 @@ public class EmpresaListado extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Integer temp = list.get(position).getId();
+                Long temp = list.get(position).getId();
 
                 Intent activity2Intent = new Intent(getApplicationContext(), EmpresaDetalle.class);
                 activity2Intent.putExtra("idEmp", temp);
