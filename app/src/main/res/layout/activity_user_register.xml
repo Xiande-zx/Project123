@@ -105,18 +105,19 @@
         android:id="@+id/checkBox"
         android:layout_width="378dp"
         android:layout_height="50dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif"
-
-        android:background="@drawable/edittextredondos"
-        android:button="@drawable/icon_check_off_foreground"
         android:gravity="center|left"
-        android:text="Inmune"
+        android:scaleX="0.75"
+        android:scaleY="2"
+        android:text="             Inmune"
         android:textColor="#080909"
         android:textColorHint="#FFFFFF"
-        android:textSize="18sp"
+        android:textScaleX="1.4"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText6" />
 
