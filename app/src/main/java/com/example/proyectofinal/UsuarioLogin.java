@@ -17,7 +17,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class UserLogin extends AppCompatActivity {
+public class UsuarioLogin extends AppCompatActivity {
     Button verServicios;
     Button registrar;
     Button emp;
@@ -29,14 +29,14 @@ public class UserLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_login);
+        setContentView(R.layout.activity_usuario_login);
 
         registrar=findViewById(R.id.button2);
 
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(UserLogin.this, UserRegister.class);
+                Intent i = new Intent(UsuarioLogin.this, UsuarioRegistrar.class);
                 startActivity(i);
             }
         });
@@ -81,7 +81,7 @@ public class UserLogin extends AppCompatActivity {
                                 Gson gson = new Gson();
                                 String userJson = gson.toJson(user);
 
-                                Intent intent = new Intent(UserLogin.this, UserHome.class);
+                                Intent intent = new Intent(UsuarioLogin.this, UsuarioMenu.class);
                                 intent.putExtra("userJson", userJson);
                                 startActivity(intent);
                             }else{

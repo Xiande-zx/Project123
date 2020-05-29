@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         company.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, CompanyLogin.class);
+                Intent i = new Intent(MainActivity.this, EmpLogin.class);
                 startActivity(i);
             }
         });
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, UserLogin.class);
+                Intent i = new Intent(MainActivity.this, UsuarioLogin.class);
                 startActivity(i);
             }
         });

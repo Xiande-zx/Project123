@@ -21,7 +21,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class CompanyHome extends AppCompatActivity {
+public class EmpMenu extends AppCompatActivity {
 
 
     Button companyDetails;
@@ -37,7 +37,7 @@ public class CompanyHome extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_company_home);
+        setContentView(R.layout.activity_emp_menu);
 
         companyDetails =findViewById(R.id.button11);
         search=findViewById(R.id.buscador1);
@@ -47,7 +47,7 @@ public class CompanyHome extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(CompanyHome.this, CompanyAddService.class);
+                Intent intent= new Intent(EmpMenu.this, AddServicio.class);
                 startActivity(intent);
             }
         });
@@ -63,7 +63,7 @@ public class CompanyHome extends AppCompatActivity {
         companyDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), CompanyDetails.class);
+                Intent intent = new Intent(v.getContext(), EmpEmpDetalle.class);
                 intent.putExtra("userJson", userStr);
                 startActivity(intent);
             }
@@ -108,7 +108,7 @@ public class CompanyHome extends AppCompatActivity {
                         }
                     }
 
-                    final USAdapter usAdapter1 = new USAdapter(CompanyHome.this, list1);
+                    final USAdapter usAdapter1 = new USAdapter(EmpMenu.this, list1);
 
                     listView.setAdapter(usAdapter1);
 
@@ -128,7 +128,7 @@ public class CompanyHome extends AppCompatActivity {
                     Gson gson = new Gson();
                     String serviceJson = gson.toJson(service);
 
-                    Intent activity2Intent = new Intent(getApplicationContext(), CompanyServiceDetails.class);
+                    Intent activity2Intent = new Intent(getApplicationContext(), EmpServicioDetalle.class);
                     activity2Intent.putExtra("serviceJson", serviceJson);
                     startActivity(activity2Intent);
 

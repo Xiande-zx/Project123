@@ -26,7 +26,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class UserCompanyList extends AppCompatActivity {
+public class EmpresaListado extends AppCompatActivity {
 
     Button verDetalleUsuario;
     ListView listView;
@@ -42,7 +42,7 @@ public class UserCompanyList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_company_list);
+        setContentView(R.layout.activity_empresa_listado);
         verDetalleUsuario=(Button)findViewById(R.id.button8);
         buscador =(EditText) findViewById(R.id.editText8);
         listView=findViewById(R.id.listEmp);
@@ -98,7 +98,7 @@ public class UserCompanyList extends AppCompatActivity {
 
                 Long temp = list.get(position).getId();
 
-                Intent activity2Intent = new Intent(getApplicationContext(), UserCompanyDetails.class);
+                Intent activity2Intent = new Intent(getApplicationContext(), EmpresaDetalle.class);
                 activity2Intent.putExtra("idEmp", temp);
                 startActivity(activity2Intent);
 
@@ -120,7 +120,7 @@ public class UserCompanyList extends AppCompatActivity {
                     }
                 }
 
-                final EmpAdapter EmpAdapter1 = new EmpAdapter(UserCompanyList.this, list1);
+                final EmpAdapter EmpAdapter1 = new EmpAdapter(EmpresaListado.this, list1);
 
                 listView.setAdapter(EmpAdapter1);
             }
@@ -133,7 +133,7 @@ public class UserCompanyList extends AppCompatActivity {
         verDetalleUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), UserDetails.class);
+                Intent intent = new Intent(v.getContext(), UsuarioDetalle.class);
                 startActivity(intent);
             }
         });

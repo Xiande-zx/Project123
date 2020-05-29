@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.example.proyectofinal.clase.Service;
 import com.google.gson.Gson;
 
-public class UserServiceDetails extends AppCompatActivity {
+public class ServicioDetalle extends AppCompatActivity {
 
     Service service;
 
@@ -22,7 +22,7 @@ public class UserServiceDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_service_details);
+        setContentView(R.layout.activity_servicio_detalle);
 
         Intent myIntent = getIntent();
         getIntent().getSerializableExtra("serviceJson");
@@ -41,7 +41,7 @@ public class UserServiceDetails extends AppCompatActivity {
         detalleEmp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UserServiceDetails.this, UserCompanyDetails.class);
+                Intent intent = new Intent(ServicioDetalle.this, EmpresaDetalle.class);
                 intent.putExtra("idEmp",idEmp);
                 startActivity(intent);
             }

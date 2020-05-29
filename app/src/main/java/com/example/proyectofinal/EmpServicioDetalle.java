@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.example.proyectofinal.clase.Service;
 import com.google.gson.Gson;
 
-public class CompanyServiceDetails extends AppCompatActivity {
+public class EmpServicioDetalle extends AppCompatActivity {
 
     Service service;
 
@@ -22,7 +22,7 @@ public class CompanyServiceDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_company_service_details);
+        setContentView(R.layout.activity_emp_servicio_detalle);
 
         deleteService=findViewById(R.id.button14);
         editService=findViewById(R.id.button13);
@@ -30,7 +30,7 @@ public class CompanyServiceDetails extends AppCompatActivity {
         editService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(CompanyServiceDetails.this, CompanyAddService.class);
+                Intent intent= new Intent(EmpServicioDetalle.this, AddServicio.class);
                 startActivity(intent);
             }
         });
@@ -38,7 +38,7 @@ public class CompanyServiceDetails extends AppCompatActivity {
         deleteService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(CompanyServiceDetails.this, CompanyHome.class);
+                Intent i = new Intent(EmpServicioDetalle.this, EmpMenu.class);
                 startActivity(i);
             }
         });

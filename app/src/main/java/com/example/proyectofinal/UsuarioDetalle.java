@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.example.proyectofinal.clase.User;
 import com.google.gson.Gson;
 
-public class UserDetails extends AppCompatActivity {
+public class UsuarioDetalle extends AppCompatActivity {
     Button modificar, verServicios;
 
     TextView phone;
@@ -21,7 +21,7 @@ public class UserDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_details);
+        setContentView(R.layout.activity_usuario_detalle);
 
         modificar =(Button)findViewById(R.id.button5);
         verServicios =(Button)findViewById(R.id.button4);
@@ -48,7 +48,7 @@ public class UserDetails extends AppCompatActivity {
         modificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), UserRegister.class);
+                Intent intent = new Intent(v.getContext(), UsuarioRegistrar.class);
                 startActivity(intent);
             }
         });
@@ -56,7 +56,7 @@ public class UserDetails extends AppCompatActivity {
         verServicios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), UserHome.class);
+                Intent intent = new Intent(v.getContext(), UsuarioMenu.class);
                 intent.putExtra("userJson", userStr);
                 startActivity(intent);
             }

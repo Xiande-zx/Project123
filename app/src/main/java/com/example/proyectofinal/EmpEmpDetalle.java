@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.example.proyectofinal.clase.Emp;
 import com.google.gson.Gson;
 
-public class CompanyDetails extends AppCompatActivity {
+public class EmpEmpDetalle extends AppCompatActivity {
 
     private TextView name;
     private TextView number;
@@ -23,7 +23,7 @@ public class CompanyDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_company_details);
+        setContentView(R.layout.activity_emp_emp_detalle);
 
         name=findViewById(R.id.textView30);
         number=findViewById(R.id.textView31);

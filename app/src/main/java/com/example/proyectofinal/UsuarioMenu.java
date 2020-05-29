@@ -14,37 +14,51 @@ import android.widget.ListView;
 
 import com.example.proyectofinal.UserAdapter.USAdapter;
 import com.example.proyectofinal.clase.Service;
+import com.example.proyectofinal.clase.User;
 import com.google.gson.Gson;
 
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class UserServiceList extends AppCompatActivity {
-
+public class UsuarioMenu extends AppCompatActivity {
+    Button detalleUsuario, empresaServicios;
     EditText buscador;
 
-    Integer temp;
-    Button listService;
     private ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_service_list);
-        buscador =(EditText) findViewById(R.id.editText9);
-        listService=findViewById(R.id.button17);
+        setContentView(R.layout.activity_usuario_menu);
+        buscador =(EditText) findViewById(R.id.editText7);
 
-        listService.setOnClickListener(new View.OnClickListener() {
+        detalleUsuario =(Button)findViewById(R.id.button7);
+        empresaServicios =(Button)findViewById(R.id.button6);
+        listView=findViewById(R.id.lista);
+
+        Intent myIntent = getIntent();
+        getIntent().getSerializableExtra("userJson");
+        Gson gson = new Gson();
+        final User user = gson.fromJson(getIntent().getStringExtra("userJson"), User.class);
+
+        final String userStr = getIntent().getStringExtra("userJson");
+
+        detalleUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(UserServiceList.this, UserDetails.class);
+                Intent intent = new Intent(v.getContext(), UsuarioDetalle.class);
+                intent.putExtra("userJson", userStr);
                 startActivity(intent);
             }
         });
-        Intent intent = getIntent();
-        temp = intent.getIntExtra("idEmp", 0);
 
-        listView=findViewById(R.id.lista);
+        empresaServicios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), EmpresaListado.class);
+                startActivity(intent);
+            }
+        });
 
         String json ="";
 
@@ -59,15 +73,7 @@ public class UserServiceList extends AppCompatActivity {
 
         final ArrayList<Service> list  = new ArrayList<Service>(Arrays.asList(new Gson().fromJson(json, Service[].class)));
 
-        final ArrayList<Service> list1 = new ArrayList<>();
-
-        for (int i = 0; i < list.size(); i++){
-            if (list.get(i).getIdEmp()==temp){
-                list1.add(list.get(i));
-            }
-        }
-
-        USAdapter usAdapter = new USAdapter(this,list1);
+        USAdapter usAdapter = new USAdapter(this,list);
 
         listView.setAdapter(usAdapter);
 
@@ -79,7 +85,7 @@ public class UserServiceList extends AppCompatActivity {
                 Gson gson = new Gson();
                 String serviceJson = gson.toJson(service);
 
-                Intent activity2Intent = new Intent(getApplicationContext(), UserServiceDetails.class);
+                Intent activity2Intent = new Intent(getApplicationContext(), ServicioDetalle.class);
                 activity2Intent.putExtra("serviceJson", serviceJson);
                 startActivity(activity2Intent);
 
@@ -100,7 +106,7 @@ public class UserServiceList extends AppCompatActivity {
                     }
                 }
 
-                final USAdapter usAdapter1 = new USAdapter(UserServiceList.this, list1);
+                final USAdapter usAdapter1 = new USAdapter(UsuarioMenu.this, list1);
 
                 listView.setAdapter(usAdapter1);
             }

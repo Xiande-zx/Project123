@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.example.proyectofinal.clase.User;
 import com.google.gson.Gson;
 
-public class UserRegister extends AppCompatActivity {
+public class UsuarioRegistrar extends AppCompatActivity {
     private String userName;
     private String password;
 
@@ -42,7 +42,7 @@ public class UserRegister extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_register);
+        setContentView(R.layout.activity_usuario_registrar);
 
         RuserName=findViewById(R.id.editText3);
         Rpassword=findViewById(R.id.editText5);
@@ -79,7 +79,7 @@ public class UserRegister extends AppCompatActivity {
                     error("email");
                 }else{
                     User user = new User(1,userName,password,phone,email,true);
-                    Intent intent = new Intent(UserRegister.this, UserDetails.class);
+                    Intent intent = new Intent(UsuarioRegistrar.this, UsuarioDetalle.class);
                     startActivity(intent);
                 }
             }
