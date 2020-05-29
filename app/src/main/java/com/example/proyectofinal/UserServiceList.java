@@ -20,26 +20,25 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class ServicioListado extends AppCompatActivity {
+public class UserServiceList extends AppCompatActivity {
 
-    Button crearServicio;
     EditText buscador;
 
     Integer temp;
-
+    Button listService;
     private ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_servicio_listado);
+        setContentView(R.layout.activity_user_service_list);
         buscador =(EditText) findViewById(R.id.editText9);
-        crearServicio=findViewById(R.id.button19);
+        listService=findViewById(R.id.button17);
 
-        crearServicio.setOnClickListener(new View.OnClickListener() {
+        listService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ServicioListado.this,AddServicio.class);
-                startActivity(i);
+                Intent intent= new Intent(UserServiceList.this, UserDetails.class);
+                startActivity(intent);
             }
         });
         Intent intent = getIntent();
@@ -80,7 +79,7 @@ public class ServicioListado extends AppCompatActivity {
                 Gson gson = new Gson();
                 String serviceJson = gson.toJson(service);
 
-                Intent activity2Intent = new Intent(getApplicationContext(), ServicioDetalle.class);
+                Intent activity2Intent = new Intent(getApplicationContext(), UserServiceDetails.class);
                 activity2Intent.putExtra("serviceJson", serviceJson);
                 startActivity(activity2Intent);
 
@@ -101,7 +100,7 @@ public class ServicioListado extends AppCompatActivity {
                     }
                 }
 
-                final USAdapter usAdapter1 = new USAdapter(ServicioListado.this, list1);
+                final USAdapter usAdapter1 = new USAdapter(UserServiceList.this, list1);
 
                 listView.setAdapter(usAdapter1);
             }

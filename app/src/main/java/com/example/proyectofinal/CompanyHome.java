@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ListView;
 
 import com.example.proyectofinal.UserAdapter.USAdapter;
@@ -22,10 +21,10 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class EmpMenu extends AppCompatActivity {
+public class CompanyHome extends AppCompatActivity {
 
 
-    Button detalleUsuario;
+    Button companyDetails;
     Button add;
 
     private ListView listView;
@@ -38,9 +37,9 @@ public class EmpMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_emp_menu);
+        setContentView(R.layout.activity_company_home);
 
-        detalleUsuario =findViewById(R.id.button11);
+        companyDetails =findViewById(R.id.button11);
         search=findViewById(R.id.buscador1);
         listView=findViewById(R.id.lista1);
 
@@ -48,7 +47,7 @@ public class EmpMenu extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(EmpMenu.this,AddServicio.class);
+                Intent intent= new Intent(CompanyHome.this, CompanyAddService.class);
                 startActivity(intent);
             }
         });
@@ -61,10 +60,10 @@ public class EmpMenu extends AppCompatActivity {
 
         final String userStr = getIntent().getStringExtra("userJson");
 
-        detalleUsuario.setOnClickListener(new View.OnClickListener() {
+        companyDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), EmpEmpDetalle.class);
+                Intent intent = new Intent(v.getContext(), CompanyDetails.class);
                 intent.putExtra("userJson", userStr);
                 startActivity(intent);
             }
@@ -109,7 +108,7 @@ public class EmpMenu extends AppCompatActivity {
                         }
                     }
 
-                    final USAdapter usAdapter1 = new USAdapter(EmpMenu.this, list1);
+                    final USAdapter usAdapter1 = new USAdapter(CompanyHome.this, list1);
 
                     listView.setAdapter(usAdapter1);
 
@@ -129,7 +128,7 @@ public class EmpMenu extends AppCompatActivity {
                     Gson gson = new Gson();
                     String serviceJson = gson.toJson(service);
 
-                    Intent activity2Intent = new Intent(getApplicationContext(), EmpServicioDetalle.class);
+                    Intent activity2Intent = new Intent(getApplicationContext(), CompanyServiceDetails.class);
                     activity2Intent.putExtra("serviceJson", serviceJson);
                     startActivity(activity2Intent);
 

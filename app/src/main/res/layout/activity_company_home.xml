@@ -4,17 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EmpMenu">
+    tools:context=".CompanyHome">
 
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="378dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif"
+        android:text="Home"
+        android:textColor="#070707"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/buscador1"
         style="@style/Widget.AppCompat.AutoCompleteTextView"
-        android:layout_width="378dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_width="291dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif"
         android:background="@drawable/edittextredondos"
         android:drawableLeft="@android:drawable/ic_search_category_default"
         android:ems="10"
@@ -22,15 +38,16 @@
         android:inputType="textPersonName"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
+        app:layout_constraintTop_toBottomOf="@+id/textView42" />
 
     <ListView
         android:id="@+id/lista1"
-        android:layout_width="382dp"
+        android:layout_width="378dp"
         android:layout_height="504dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif"
         android:divider="@android:color/transparent"
         android:dividerHeight="5dp"
         android:focusableInTouchMode="false"
@@ -40,27 +57,29 @@
 
     <Button
         android:id="@+id/button11"
-        android:layout_width="65dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="324dp"
-        android:layout_marginLeft="324dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="51dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="64dp"
+        android:fontFamily="sans-serif"
         android:background="@drawable/btn_dos_ripple_user"
-        android:drawableBottom="@drawable/user4"
+        android:foreground="@drawable/icon_bussines_foreground"
         android:textColor="#17202A"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buscador1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button16"
-        android:layout_width="253dp"
+        android:layout_width="378dp"
         android:layout_height="50dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginLeft="144dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/btn_dos_ripple"
-        android:text="@string/buttonNuevoServicio"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_ripple"
+        android:gravity="center"
+        android:text="@string/buttonServicioNuevo"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lista1" />

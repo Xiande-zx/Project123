@@ -7,14 +7,9 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.proyectofinal.clase.Emp;
-import com.example.proyectofinal.clase.User;
 import com.google.gson.Gson;
 
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-
-public class EmpEmpDetalle extends AppCompatActivity {
+public class CompanyDetails extends AppCompatActivity {
 
     private TextView name;
     private TextView number;
@@ -28,7 +23,7 @@ public class EmpEmpDetalle extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_emp_emp_detalle);
+        setContentView(R.layout.activity_company_details);
 
         name=findViewById(R.id.textView30);
         number=findViewById(R.id.textView31);

@@ -17,8 +17,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class EmpLogin extends AppCompatActivity {
-    Button verServicios;
+public class CompanyLogin extends AppCompatActivity {
+    Button verServicios,contacUs;
 
     EditText username;
     EditText password;
@@ -27,9 +27,17 @@ public class EmpLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_emp_login);
+        setContentView(R.layout.activity_company_login);
 
-            verServicios= (Button) findViewById(R.id.button);
+            verServicios= (Button) findViewById(R.id.button21);
+            contacUs = findViewById(R.id.button20);
+            contacUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CompanyLogin.this, CompanyDetails.class);
+                startActivity(i);
+            }
+             });
             verServicios.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -70,7 +78,7 @@ public class EmpLogin extends AppCompatActivity {
                                     Gson gson = new Gson();
                                     String userJson = gson.toJson(emp);
 
-                                    Intent intent = new Intent(EmpLogin.this, EmpMenu.class);
+                                    Intent intent = new Intent(CompanyLogin.this, CompanyHome.class);
                                     intent.putExtra("userJson", userJson);
                                     startActivity(intent);
                                 }else{

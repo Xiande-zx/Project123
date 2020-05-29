@@ -21,20 +21,15 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
-public class UsuarioMenu extends AppCompatActivity {
+public class UserHome extends AppCompatActivity {
     Button detalleUsuario, empresaServicios;
     EditText buscador;
 
     private ListView listView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_usuario_menu);
-
+        setContentView(R.layout.activity_user_home);
         buscador =(EditText) findViewById(R.id.editText7);
 
         detalleUsuario =(Button)findViewById(R.id.button7);
@@ -51,7 +46,7 @@ public class UsuarioMenu extends AppCompatActivity {
         detalleUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), UsuarioDetalle.class);
+                Intent intent = new Intent(v.getContext(), UserDetails.class);
                 intent.putExtra("userJson", userStr);
                 startActivity(intent);
             }
@@ -60,7 +55,7 @@ public class UsuarioMenu extends AppCompatActivity {
         empresaServicios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), EmpresaListado.class);
+                Intent intent = new Intent(v.getContext(), UserCompanyList.class);
                 startActivity(intent);
             }
         });
@@ -90,7 +85,7 @@ public class UsuarioMenu extends AppCompatActivity {
                 Gson gson = new Gson();
                 String serviceJson = gson.toJson(service);
 
-                Intent activity2Intent = new Intent(getApplicationContext(), ServicioDetalle.class);
+                Intent activity2Intent = new Intent(getApplicationContext(), UserServiceDetails.class);
                 activity2Intent.putExtra("serviceJson", serviceJson);
                 startActivity(activity2Intent);
 
@@ -111,7 +106,7 @@ public class UsuarioMenu extends AppCompatActivity {
                     }
                 }
 
-                final USAdapter usAdapter1 = new USAdapter(UsuarioMenu.this, list1);
+                final USAdapter usAdapter1 = new USAdapter(UserHome.this, list1);
 
                 listView.setAdapter(usAdapter1);
             }

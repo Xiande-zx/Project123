@@ -4,15 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ServicioListado">
+    tools:context=".UserServiceList">
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="378dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif"
+
+        android:text="All Services"
+        android:textColor="#070707"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText9"
         android:layout_width="291dp"
         android:layout_height="51dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif"
+
         android:background="@drawable/edittextredondos"
         android:drawableLeft="?android:attr/actionModeWebSearchDrawable"
         android:ems="10"
@@ -20,15 +38,17 @@
         android:inputType="textPersonName"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView46" />
 
     <ListView
         android:id="@+id/lista"
-        android:layout_width="382dp"
+        android:layout_width="378dp"
         android:layout_height="504dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText9" />
 
@@ -36,9 +56,9 @@
         android:id="@+id/button17"
         android:layout_width="51dp"
         android:layout_height="51dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="80dp"
         android:background="@drawable/btn_dos_ripple_user"
         android:drawableBottom="@drawable/user4"
         android:textColor="#17202A"
@@ -46,16 +66,4 @@
         app:layout_constraintStart_toEndOf="@+id/editText9"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button19"
-        android:layout_width="378dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/btn_dos_ripple"
-        android:text="@string/buttonServicioNuevo"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lista" />
 </androidx.constraintlayout.widget.ConstraintLayout>

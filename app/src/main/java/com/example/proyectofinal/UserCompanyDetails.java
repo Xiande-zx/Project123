@@ -15,7 +15,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class EmpresaDetalle extends AppCompatActivity {
+public class UserCompanyDetails extends AppCompatActivity {
 
     private TextView name;
     private TextView number;
@@ -30,7 +30,7 @@ public class EmpresaDetalle extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_empresa_detalle);
+        setContentView(R.layout.activity_user_company_details);
         verListadoServicios = (Button)findViewById(R.id.button10);
 
         name=findViewById(R.id.textView20);
@@ -68,7 +68,7 @@ public class EmpresaDetalle extends AppCompatActivity {
         verListadoServicios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), ServicioListado.class);
+                Intent intent = new Intent(v.getContext(), UserServiceList.class);
                 intent.putExtra("idEmp",temp);
                 startActivity(intent);
             }

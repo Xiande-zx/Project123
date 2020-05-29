@@ -8,13 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.proyectofinal.clase.Service;
 import com.google.gson.Gson;
 
-public class AddServicio extends AppCompatActivity {
+public class CompanyAddService extends AppCompatActivity {
 
     EditText type;
     EditText description;
@@ -27,7 +26,7 @@ public class AddServicio extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_servicio);
+        setContentView(R.layout.activity_company_add_service);
 
         type=findViewById(R.id.editText10);
         description=findViewById(R.id.editText11);
@@ -50,7 +49,7 @@ public class AddServicio extends AppCompatActivity {
 
                 Service service = new Service(1,ttype,ddespriprion,2);
 
-                Intent intent1 = new Intent(AddServicio.this,EmpServicioDetalle.class);
+                Intent intent1 = new Intent(CompanyAddService.this, CompanyServiceDetails.class);
                 startActivity(intent);
             }
         });
