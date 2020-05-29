@@ -63,7 +63,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="64dp"
         android:fontFamily="sans-serif"
-        android:background="@drawable/btn_dos_ripple_user"
+        android:background="@drawable/btn_dos_ripple_user_add"
         android:foreground="@drawable/icon_bussines_foreground"
         android:textColor="#17202A"
         android:textStyle="bold"
