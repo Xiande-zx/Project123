@@ -17,7 +17,7 @@
     <string name="buttonRegistrar">Create</string>
 
     <!--ACTIVITY_USUARIO_DETALLE-->
-    <string name="buttonVerMenu">See menu</string>
+    <string name="buttonVerMenu">HOME</string>
     <string name="buttonModificar">Edit</string>
 
     <!--ACTIVITY_USUARIO_MENU-->
@@ -25,23 +25,23 @@
 
     <!--ACTIVITY_EMPRESA_LISTADO-->
     <string name="edittextBuscadorEmpresa">Search company</string>
-    <string name="buttonEmpresaListado">See Companies</string>
+    <string name="buttonEmpresaListado"> Companies</string>
     <string name="buttonEmpresaNueva">New company</string>
 
     <!--ACTIVITY_SERVICIO_DETALLE-->
-    <string name="buttonContactar">Communicate</string>
+    <string name="buttonContactar">Contact us</string>
 
     <!--ACTIVITY_EMPRESA_DETALLE-->
-    <string name="buttonListaServicios">See services</string>
+    <string name="buttonListaServicios"> services</string>
 
     <!--ACTIVITY_SERVICIO_LISTADO-->
     <string name="edittextBuscadorServicios2">Search service</string>
     <string name="buttonServicioNuevo">New service</string>
 
     <!--ACTIVITY_ADD_SERVICIO-->
-    <string name="edittextTipoServicio">Type service</string>
-    <string name="edittextDescripcionServicios">Description service</string>
-    <string name="buttonaniadirServicio">Add</string>
+    <string name="edittextTipoServicio">Type </string>
+    <string name="edittextDescripcionServicios">Description </string>
+    <string name="buttonaniadirServicio">Add </string>
 
     <!--ACTIVITY_EMP_SERVICIO_DETALLE-->
     <string name="buttonBorrarServicio">Delete</string>
@@ -53,5 +53,12 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_main2">Main2Activity</string>
+
+    <!--ACTIVITY_PRINCIPAL_USER_COMPANY-->
+    <string name="buttonUser">User</string>
+    <string name="buttonCompany">Company</string>
+
+    <!--ACTIVITY_PRINCIPAL_USER_COMPANY-->
+    <string name="buttonCompanyLogin">Contact us</string>
 
 </resources>
