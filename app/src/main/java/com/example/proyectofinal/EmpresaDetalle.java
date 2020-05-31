@@ -33,7 +33,7 @@ public class EmpresaDetalle extends AppCompatActivity {
     private TextView adress;
     Long temp;
     Emp emp;
-    Button verListadoServicios,out;
+    Button verListadoServicios;
     private static Retrofit retrofit = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +41,7 @@ public class EmpresaDetalle extends AppCompatActivity {
         setContentView(R.layout.activity_empresa_detalle);
         verListadoServicios = (Button)findViewById(R.id.button10);
 
-        out=findViewById(R.id.log_Out);
-        out.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), MainActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
         name=findViewById(R.id.textView20);
         number=findViewById(R.id.textView24);

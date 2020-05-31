@@ -33,7 +33,7 @@ public class EmpEmpDetalle extends AppCompatActivity {
     private TextView adress;
     private static Retrofit retrofit = null;
     Emp emp;
-    Button update;
+    Button update,out;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -47,6 +47,15 @@ public class EmpEmpDetalle extends AppCompatActivity {
         email=findViewById(R.id.EEtextView25);
         adress=findViewById(R.id.EEtextView26);
         update=findViewById(R.id.button10);
+
+        out=findViewById(R.id.log_Out);
+        out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Toolbar toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
