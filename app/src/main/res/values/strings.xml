@@ -1,12 +1,14 @@
 <resources>
     <string name="app_name">ProyectoFinal</string>
+
+
     <!--ACTIVITY_MAIN-->
     <string name="edittextNombreUsuario">Username</string>
     <string name="edittextContraseña">Password</string>
     <string name="buttonIniciarSesion">Login</string>
     <string name="edittextRegistrate">Sign In</string>
     <string name="buttonEmpresa">Company</string>
-
+    <string name="url">http://ec2-100-26-220-203.compute-1.amazonaws.com:8080</string>
     <!--ACTIVITY_USUARIO_REGISTRAR-->
     <string name="edittextNombreUsuario2">Username</string>
     <string name="edittextEmail">Email</string>
@@ -46,5 +48,10 @@
 
     <!--ACTIVITY_EMP_SERVICIO_DETALLE-->
     <string name="buttonNuevoServicio">New</string>
+    <string name="title_activity_usuario_menu2">UsuarioMenu2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_main2">Main2Activity</string>
 
 </resources>

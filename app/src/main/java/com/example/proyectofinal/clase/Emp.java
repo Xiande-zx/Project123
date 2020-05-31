@@ -4,14 +4,15 @@ package com.example.proyectofinal.clase;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Emp {
+public class Emp implements Serializable {
 
     @SerializedName("id")
     @Expose
     private Long id;
-    @SerializedName("UserName")
+    @SerializedName("userName")
     @Expose
     private String UserName;
     @SerializedName("password")
@@ -32,6 +33,8 @@ public class Emp {
     @SerializedName("adress")
     @Expose
     private String adress;
+
+
 
     public Emp(){
 

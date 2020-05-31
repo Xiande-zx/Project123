@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.proyectofinal">
 
-   <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,18 +10,27 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".AddServicio"></activity>
+        android:theme="@style/AppTheme"
+        >
+        <activity android:name=".StartActivity"></activity>
+        <activity android:name=".EmpUpdate" />
+        <activity android:name=".AddServicio" />
         <activity android:name=".EmpEmpDetalle" />
         <activity android:name=".EmpServicioDetalle" />
-        <activity android:name=".EmpMenu" />
+        <activity android:name=".EmpMenu"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
         <activity android:name=".EmpLogin" />
-        <activity android:name=".ServicioListado" />
+        <activity android:name=".ServicioListado"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
         <activity android:name=".EmpresaDetalle" />
-        <activity android:name=".ServicioDetalle" />
-        <activity android:name=".EmpresaListado" />
-        <activity android:name=".UsuarioMenu" />
-        <activity android:name=".UsuarioDetalle" android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+        <activity android:name=".ServicioDetalle"
+            />
+        <activity android:name=".EmpresaListado"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
+        <activity android:name=".UsuarioMenu"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
+        <activity android:name=".UsuarioDetalle"
+            android:parentActivityName=".UsuarioMenu"/>
         <activity android:name=".UsuarioRegistrar" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -52,6 +52,8 @@ public class EmpAdapter extends BaseAdapter {
         TextView name = miVista.findViewById(R.id.EmpName);
         name.setText(emp.getName());
 
+        TextView des = miVista.findViewById(R.id.empName);
+        des.setText(emp.getDescription());
         return miVista;
     }
 }

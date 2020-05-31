@@ -23,12 +23,12 @@ public interface UserInterface {
     Call<User> getUser(@Path("id") Long id);
 
     @POST("/controlApp/User/")
-    Call<ResponseBody> postUser(@Body User user);
+    Call<User> postUser(@Body User user);
 
     @DELETE("/controlApp/User/")
-    Call<ResponseBody> deleteUser(@Body User user);
+    Call<User> deleteUser(@Body User user);
 
     @PUT("/controlApp/User/")
-    Call<ResponseBody> putUser(@Body User user);
+    Call<User> putUser(@Body User user);
 
 }

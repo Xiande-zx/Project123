@@ -23,10 +23,10 @@ public interface EmpInterface {
     Call<Emp> getEmp(@Path("id") Long id);
 
     @POST("/controlApp/Emp/")
-    Call<ResponseBody> postEmp(@Body Emp emp);
+    Call<Emp> postEmp(@Body Emp emp);
 
     @DELETE("/controlApp/Emp/")
-    Call<ResponseBody> deleteEmp(@Body Emp emp);
+    Call<Emp> deleteEmp(@Body Emp emp);
 
 }
 

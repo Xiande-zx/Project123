@@ -6,63 +6,78 @@
     android:layout_height="match_parent"
     tools:context=".EmpMenu">
 
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolbar"></include>
+
 
     <EditText
         android:id="@+id/buscador1"
         style="@style/Widget.AppCompat.AutoCompleteTextView"
-        android:layout_width="378dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="291dp"
+        android:layout_height="51dp"
         android:background="@drawable/edittextredondos"
         android:drawableLeft="@android:drawable/ic_search_category_default"
         android:ems="10"
+        android:fontFamily="sans-serif"
         android:hint="@string/edittextBuscadorServicios"
         android:inputType="textPersonName"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar1"
+        app:layout_constraintVertical_bias="0.023" />
 
     <ListView
         android:id="@+id/lista1"
-        android:layout_width="382dp"
-        android:layout_height="504dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="377dp"
+        android:layout_height="446dp"
         android:divider="@android:color/transparent"
         android:dividerHeight="5dp"
         android:focusableInTouchMode="false"
+        android:fontFamily="sans-serif"
         android:isScrollContainer="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buscador1" />
+        app:layout_constraintTop_toBottomOf="@+id/buscador1"
+        app:layout_constraintVertical_bias="0.125" />
 
     <Button
         android:id="@+id/button11"
-        android:layout_width="65dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="324dp"
-        android:layout_marginLeft="324dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/btn_dos_ripple_user"
-        android:drawableBottom="@drawable/user4"
+        android:layout_width="51dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/btn_dos_ripple_user_add"
+        android:fontFamily="sans-serif"
+        android:foreground="@drawable/icon_bussines_foreground"
         android:textColor="#17202A"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/buscador1"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar1"
+        app:layout_constraintVertical_bias="0.023" />
 
     <Button
         android:id="@+id/button16"
-        android:layout_width="253dp"
+        android:layout_width="378dp"
         android:layout_height="50dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginLeft="144dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/btn_dos_ripple"
-        android:text="@string/buttonNuevoServicio"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_ripple"
+        android:gravity="center"
+        android:text="@string/buttonServicioNuevo"
         android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lista1" />
+        app:layout_constraintTop_toBottomOf="@+id/lista1"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,8 +11,12 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.example.proyectofinal.Interface.EmpInterface;
+import com.example.proyectofinal.Interface.ServiceInterface;
 import com.example.proyectofinal.UserAdapter.USAdapter;
+import com.example.proyectofinal.clase.Emp;
 import com.example.proyectofinal.clase.Service;
 import com.google.gson.Gson;
 
@@ -20,12 +24,22 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class ServicioListado extends AppCompatActivity {
 
-    Button crearServicio;
     EditText buscador;
 
-    Integer temp;
+    Long temp;
+
+    ArrayList<Service> list;
+    ArrayList<Service> list2;
+
+    private static Retrofit retrofit = null;
 
     private ListView listView;
     @Override
@@ -33,83 +47,89 @@ public class ServicioListado extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_servicio_listado);
         buscador =(EditText) findViewById(R.id.editText9);
-        crearServicio=findViewById(R.id.button19);
 
-        crearServicio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(ServicioListado.this,AddServicio.class);
-                startActivity(i);
-            }
-        });
         Intent intent = getIntent();
-        temp = intent.getIntExtra("idEmp", 0);
+        temp = intent.getLongExtra("idEmp", 0);
 
         listView=findViewById(R.id.lista);
 
-        String json ="";
-
-        try {
-            InputStream stream = getAssets().open("ServiceList.json");
-            int size = stream.available();
-            byte[] buffer = new byte[size];
-            stream.read(buffer);
-            stream.close();
-            json  = new String(buffer);
-        } catch (Exception e) { }
-
-        final ArrayList<Service> list  = new ArrayList<Service>(Arrays.asList(new Gson().fromJson(json, Service[].class)));
-
-        final ArrayList<Service> list1 = new ArrayList<>();
-
-        for (int i = 0; i < list.size(); i++){
-            if (list.get(i).getIdEmp()==temp){
-                list1.add(list.get(i));
-            }
+        if(retrofit==null){
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(getString(R.string.url))
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
         }
 
-        USAdapter usAdapter = new USAdapter(this,list1);
+        ServiceInterface service = retrofit.create(ServiceInterface.class);
+        Call<ArrayList<Service>> repos = service.listService();
 
-        listView.setAdapter(usAdapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        repos.enqueue(new Callback<ArrayList<Service>>() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onResponse(Call<ArrayList<Service>> call, Response<ArrayList<Service>> response) {
+                Toast.makeText(getApplicationContext(), String.format("OK"), Toast.LENGTH_SHORT).show();
+                list = response.body();
+                final ArrayList<Service> list1 = new ArrayList<>();
 
-                Service service = new Service(list.get(position).getId(),list.get(position).getType(),list.get(position).getDescription(),list.get(position).getIdEmp());
-                Gson gson = new Gson();
-                String serviceJson = gson.toJson(service);
-
-                Intent activity2Intent = new Intent(getApplicationContext(), ServicioDetalle.class);
-                activity2Intent.putExtra("serviceJson", serviceJson);
-                startActivity(activity2Intent);
-
-            }
-        });
-        buscador.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                ArrayList<Service> list1 = new ArrayList<>();
-                for (int i = 0; i<list.size();i++){
-                    if (list.get(i).getType().toLowerCase().contains(s.toString().toLowerCase())){
+                for (int i = 0; i < list.size(); i++){
+                    if (list.get(i).getIdEmp()==temp){
                         list1.add(list.get(i));
                     }
                 }
 
-                final USAdapter usAdapter1 = new USAdapter(ServicioListado.this, list1);
+                USAdapter usAdapter = new USAdapter(ServicioListado.this,list1);
 
-                listView.setAdapter(usAdapter1);
+                listView.setAdapter(usAdapter);
+
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        Long idService = list1.get(position).getId();
+
+                        Intent activity2Intent = new Intent(getApplicationContext(), ServicioDetalle.class);
+                        activity2Intent.putExtra("idService", idService);
+                        startActivity(activity2Intent);
+                    }
+                });
+                buscador.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                        list2 = new ArrayList<>();
+                        for (int i = 0; i<list1.size();i++){
+                            if (list1.get(i).getType().toLowerCase().contains(s.toString().toLowerCase())){
+                                list2.add(list1.get(i));
+                            }
+                        }
+                        final USAdapter usAdapter1 = new USAdapter(ServicioListado.this, list2);
+
+                        listView.setAdapter(usAdapter1);
+
+                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                Long idService = list2.get(position).getId();
+                                Intent activity2Intent = new Intent(getApplicationContext(), ServicioDetalle.class);
+                                activity2Intent.putExtra("idService", idService);
+                                startActivity(activity2Intent);
+                            }
+                        });
+                    }
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                    }
+                });
             }
-
             @Override
-            public void afterTextChanged(Editable s) {
-
+            public void onFailure(Call<ArrayList<Service>> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), String.format("KO"), Toast.LENGTH_SHORT).show();
             }
+
         });
+
+
     }
 }

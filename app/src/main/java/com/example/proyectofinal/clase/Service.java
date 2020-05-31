@@ -3,7 +3,9 @@ package com.example.proyectofinal.clase;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Service {
+import java.io.Serializable;
+
+public class Service implements Serializable {
 
     @SerializedName("id")
     @Expose
@@ -16,14 +18,11 @@ public class Service {
     private String description;
     @SerializedName("idEmp")
     @Expose
-    private Integer idEmp;
+    private Long idEmp;
 
-    public Service(){
+    private Emp emp;
 
-    }
-
-    public Service(Long id, String type, String description, Integer idEmp) {
-        this.id = id;
+    public Service(String type, String description, Long idEmp) {
         this.type = type;
         this.description = description;
         this.idEmp = idEmp;
@@ -53,11 +52,19 @@ public class Service {
         this.description = description;
     }
 
-    public Integer getIdEmp() {
+    public Long getIdEmp() {
         return idEmp;
     }
 
-    public void setIdEmp(Integer idEmp) {
+    public void setIdEmp(Long idEmp) {
         this.idEmp = idEmp;
+    }
+
+    public Emp getEmp() {
+        return emp;
+    }
+
+    public void setEmp(Emp emp) {
+        this.emp = emp;
     }
 }
