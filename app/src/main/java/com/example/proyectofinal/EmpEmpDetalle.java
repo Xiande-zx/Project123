@@ -12,12 +12,6 @@ import android.widget.Toast;
 
 import com.example.proyectofinal.Interface.EmpInterface;
 import com.example.proyectofinal.clase.Emp;
-import com.example.proyectofinal.clase.User;
-import com.google.gson.Gson;
-
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,7 +27,7 @@ public class EmpEmpDetalle extends AppCompatActivity {
     private TextView adress;
     private static Retrofit retrofit = null;
     Emp emp;
-    Button update,out;
+    Button update,out, back;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -47,6 +41,7 @@ public class EmpEmpDetalle extends AppCompatActivity {
         email=findViewById(R.id.EEtextView25);
         adress=findViewById(R.id.EEtextView26);
         update=findViewById(R.id.button10);
+        back=findViewById(R.id.button5);
 
         out=findViewById(R.id.log_Out);
         out.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +93,15 @@ public class EmpEmpDetalle extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(EmpEmpDetalle.this, EmpUpdate.class);
+                intent.putExtra("Emp",emp);
+                startActivity(intent);
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EmpEmpDetalle.this, EmpMenu.class);
                 intent.putExtra("Emp",emp);
                 startActivity(intent);
             }

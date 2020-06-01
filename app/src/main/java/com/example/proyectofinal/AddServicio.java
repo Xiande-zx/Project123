@@ -85,7 +85,6 @@ public class AddServicio extends AppCompatActivity {
                     repos.enqueue(new Callback<Service>() {
                         @Override
                         public void onResponse(Call<Service> call, Response<Service> response) {
-                            Toast.makeText(getApplicationContext(), String.format("OK"), Toast.LENGTH_SHORT).show();
                             service2= response.body();
                             Intent intent1 = new Intent(AddServicio.this,EmpServicioDetalle.class);
                             intent1.putExtra("Emp",emp);
@@ -105,7 +104,6 @@ public class AddServicio extends AppCompatActivity {
                     repos.enqueue(new Callback<Service>() {
                         @Override
                         public void onResponse(Call<Service> call, Response<Service> response) {
-                            Toast.makeText(getApplicationContext(), String.format("OK"), Toast.LENGTH_SHORT).show();
                             service2= response.body();
                             Intent intent1 = new Intent(AddServicio.this,EmpServicioDetalle.class);
                             intent1.putExtra("idService",serviceNew.getId());

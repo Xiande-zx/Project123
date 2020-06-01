@@ -67,13 +67,10 @@ public class EmpUpdate extends AppCompatActivity {
                     .build();
         }
 
-
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 nom1=nom.getText().toString();
-
                 password1=password.getText().toString();
                 phone1=phone.getText().toString();
                 description1=description.getText().toString();
@@ -93,7 +90,7 @@ public class EmpUpdate extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<Emp> call, Response<Emp> response) {
                         Emp user1 = response.body();
-                        Intent intent = new Intent(EmpUpdate.this,UsuarioDetalle.class);
+                        Intent intent = new Intent(EmpUpdate.this,EmpEmpDetalle.class);
                         intent.putExtra("idEmp",user.getId());
                         intent.putExtra("Emp",user);
                         startActivity(intent);

@@ -28,7 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class EmpServicioDetalle extends AppCompatActivity {
 
     Service service1;
-    Button delete, update;
+    Button delete, update,back;
 
     private TextView type;
     private TextView description;
@@ -41,6 +41,7 @@ public class EmpServicioDetalle extends AppCompatActivity {
         setContentView(R.layout.activity_emp_servicio_detalle);
         delete=findViewById(R.id.button14);
         update=findViewById(R.id.button13);
+        back=findViewById(R.id.button12);
 
         Toolbar toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
@@ -86,6 +87,15 @@ public class EmpServicioDetalle extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(EmpServicioDetalle.this,AddServicio.class);
                 intent.putExtra("servicio",service1);
+                intent.putExtra("Emp",emp);
+                startActivity(intent);
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EmpServicioDetalle.this,EmpMenu.class);
                 intent.putExtra("Emp",emp);
                 startActivity(intent);
             }
