@@ -94,8 +94,8 @@ public class EmpServicioDetalle extends AppCompatActivity {
 
     public void showAlertDialogButtonClicked() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("BORRAR SERVICIO");
-        builder.setMessage("¿Estas seguro que quieres borrar?");
+        builder.setTitle("DELETE SERVICE");
+        builder.setMessage("Do you want to delete this service?");
         builder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

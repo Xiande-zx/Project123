@@ -1,6 +1,7 @@
 package com.example.proyectofinal;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.proyectofinal.Interface.ServiceInterface;
@@ -49,6 +51,13 @@ public class EmpMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emp_menu);
+
+        Toolbar toolbar = findViewById(R.id.toolbar1);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+        mTitle.setText("Home");
 
         detalleUsuario =findViewById(R.id.button11);
         search=findViewById(R.id.buscador1);

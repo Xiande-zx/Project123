@@ -17,7 +17,6 @@
         android:id="@+id/log_Out"
         android:layout_width="378dp"
         android:layout_height="50dp"
-        android:layout_marginTop="32dp"
         android:background="@drawable/btn_dos_ripple_user_add_black"
         android:text="Log Out"
         android:textColor="#FFFFFF"
@@ -26,8 +25,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.42" />
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:layout_constraintVertical_bias="0.322" />
 
     <TextView
         android:id="@+id/textView"

@@ -1,6 +1,7 @@
 package com.example.proyectofinal;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,7 +31,7 @@ public class EmpresaDetalle extends AppCompatActivity {
     private TextView name;
     private TextView number;
     private TextView email;
-    private TextView adress;
+    private TextView adress,description;
     Long temp;
     Emp emp;
     Button verListadoServicios;
@@ -42,11 +43,19 @@ public class EmpresaDetalle extends AppCompatActivity {
         verListadoServicios = (Button)findViewById(R.id.button10);
 
 
+        Toolbar toolbar = findViewById(R.id.toolbar1);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+        mTitle.setText("Company detail");
+
 
         name=findViewById(R.id.textView20);
         number=findViewById(R.id.textView24);
         email=findViewById(R.id.textView25);
         adress=findViewById(R.id.textView26);
+        description=findViewById(R.id.textView42);
 
         Intent intent = getIntent();
         temp = intent.getLongExtra("idEmp", 0);
@@ -63,16 +72,16 @@ public class EmpresaDetalle extends AppCompatActivity {
         repos.enqueue(new Callback<Emp>() {
             @Override
             public void onResponse(Call<Emp> call, Response<Emp> response) {
-                Toast.makeText(getApplicationContext(), String.format("OK"), Toast.LENGTH_SHORT).show();
                 emp = response.body();
                 name.setText(emp.getName());
                 number.setText(Integer.toString(emp.getNumber()));
                 email.setText(emp.getEmail());
                 adress.setText(emp.getAdress());
+                description.setText(emp.getDescription());
             }
             @Override
             public void onFailure(Call<Emp> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), String.format("KO"), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), String.format("Time Out"), Toast.LENGTH_SHORT).show();
             }
         });
 

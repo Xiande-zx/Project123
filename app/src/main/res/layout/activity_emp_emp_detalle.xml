@@ -12,7 +12,7 @@
 
     <Button
         android:id="@+id/log_Out"
-        android:layout_width="378dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:background="@drawable/btn_dos_ripple_user_add_black"
         android:text="Log Out"
@@ -20,10 +20,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.927"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button10"
-        app:layout_constraintVertical_bias="0.483" />
+        app:layout_constraintTop_toBottomOf="@+id/EEtextView26"
+        app:layout_constraintVertical_bias="0.309" />
 
     <TextView
         android:id="@+id/EEtextView42"
@@ -32,10 +32,10 @@
         android:background="@drawable/textviewredondos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.378"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355" />
+        app:layout_constraintTop_toBottomOf="@+id/textView41"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView41"
@@ -48,8 +48,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.293" />
+        app:layout_constraintTop_toBottomOf="@+id/EEtextView"
+        app:layout_constraintVertical_bias="0.021" />
 
     <TextView
         android:id="@+id/textView7"
@@ -60,10 +60,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EEtextView20"
-        app:layout_constraintVertical_bias="0.028" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <TextView
         android:id="@+id/textView21"
@@ -74,10 +74,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EEtextView42"
-        app:layout_constraintVertical_bias="0.051" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <TextView
         android:id="@+id/textView22"
@@ -111,7 +111,7 @@
     <TextView
         android:id="@+id/EEtextView20"
         android:layout_width="378dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:gravity="center_horizontal"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -133,8 +133,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.215" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/EEtextView24"
@@ -174,7 +174,7 @@
 
     <Button
         android:id="@+id/button10"
-        android:layout_width="378dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:background="@drawable/btn_dos_ripple"
         android:text="UPDATE"
@@ -182,9 +182,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EEtextView26"
-        app:layout_constraintVertical_bias="0.138" />
+        app:layout_constraintVertical_bias="0.309" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

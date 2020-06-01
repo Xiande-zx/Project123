@@ -19,7 +19,7 @@
 
     <TextView
         android:id="@+id/EmpName"
-        android:layout_width="337dp"
+        android:layout_width="338dp"
         android:layout_height="40dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/black"

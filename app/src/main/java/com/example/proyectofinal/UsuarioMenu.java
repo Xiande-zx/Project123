@@ -45,7 +45,7 @@ public class UsuarioMenu extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
-        mTitle.setText("Home");
+        mTitle.setText("Service List");
 
         buscador =(EditText) findViewById(R.id.editText7);
 

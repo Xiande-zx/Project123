@@ -37,6 +37,7 @@ public class AddServicio extends AppCompatActivity {
     Long idEmp;
     Service service2;
     Service serviceNew;
+    TextView addSer;
 
     private static Retrofit retrofit = null;
 
@@ -48,6 +49,7 @@ public class AddServicio extends AppCompatActivity {
         type=findViewById(R.id.editText10);
         description=findViewById(R.id.editText11);
         add=findViewById(R.id.button15);
+        addSer=findViewById(R.id.textView39);
 
         emp = (Emp)getIntent().getSerializableExtra("Emp");
         idEmp = emp.getId();
@@ -55,6 +57,7 @@ public class AddServicio extends AppCompatActivity {
         serviceNew = (Service) getIntent().getSerializableExtra("servicio");
         if (serviceNew!=null){
             add.setText("UPDATE");
+            addSer.setText("Update a service");
             type.setText(serviceNew.getType());
             description.setText(serviceNew.getDescription());
         }

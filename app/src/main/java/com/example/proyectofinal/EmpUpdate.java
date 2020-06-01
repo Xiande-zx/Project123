@@ -48,7 +48,7 @@ public class EmpUpdate extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
-        mTitle.setText("UPDATE COMPANY");
+        mTitle.setText("Update Ccompany");
 
         confirm=findViewById(R.id.button10);
 
