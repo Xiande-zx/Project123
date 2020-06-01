@@ -107,6 +107,7 @@ public class AddServicio extends AppCompatActivity {
                             service2= response.body();
                             Intent intent1 = new Intent(AddServicio.this,EmpServicioDetalle.class);
                             intent1.putExtra("idService",serviceNew.getId());
+                            intent1.putExtra("Emp",emp);
                             startActivity(intent1);
                         }
                         @Override

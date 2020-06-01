@@ -119,7 +119,7 @@ public class StartActivity extends AppCompatActivity {
     }
     public void error(String str){
         Context context = getApplicationContext();
-        CharSequence text = "El camp "+str+" no pot estar buit!";
+        CharSequence text = ""+str+" can not be empty!";
         int duration = Toast.LENGTH_SHORT;
 
         Toast toast = Toast.makeText(context, text, duration);
