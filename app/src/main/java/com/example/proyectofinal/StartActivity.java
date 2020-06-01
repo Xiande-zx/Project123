@@ -77,33 +77,36 @@ public class StartActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<ArrayList<User>> call, Response<ArrayList<User>> response) {
                             list = response.body();
+                            //boolean to know if exist this user
                             Boolean has = false;
                             for (int i = 0; i < list.size(); i++ ){
                                 if (userNameStr.equalsIgnoreCase(list.get(i).getUserName())){
+                                    //if find, true
                                     has=true;
                                     if (passwordStr.equalsIgnoreCase(list.get(i).getPassword())){
-
                                         Long idUser = list.get(i).getId();
-
                                         Intent intent = new Intent(StartActivity.this, UsuarioMenu.class);
                                         intent.putExtra("idUser", idUser);
                                         startActivity(intent);
                                     }else{
                                         Context context = getApplicationContext();
-                                        CharSequence text = "Contrasenya incorrecta!";
+                                        String incorrect = getString(R.string.incorrecta);
+                                        CharSequence text = incorrect;
                                         int duration = Toast.LENGTH_SHORT;
-
                                         Toast toast = Toast.makeText(context, text, duration);
                                         toast.show();
                                     }
                                 }
                             }
+                            //if false show non exixst
                             if (has==false){
                                 Context context = getApplicationContext();
-                                CharSequence text = "No existeix l'usuari";
+                                String incorrect = getString(R.string.noExiste);
+                                CharSequence text = incorrect;
                                 int duration = Toast.LENGTH_SHORT;
                                 Toast toast = Toast.makeText(context, text, duration);
                                 toast.show();
+
                             }
                         }
                         @Override

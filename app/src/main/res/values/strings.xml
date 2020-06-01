@@ -3,6 +3,8 @@
 
 
     <!--ACTIVITY_MAIN-->
+    <string name="noExiste">This user dosent exist!</string>
+    <string name="incorrecta">Password incorrect!</string>
     <string name="edittextNombreUsuario">Username</string>
     <string name="edittextContraseña">Password</string>
     <string name="buttonIniciarSesion">Login</string>
@@ -39,6 +41,8 @@
     <string name="buttonServicioNuevo">New service</string>
 
     <!--ACTIVITY_ADD_SERVICIO-->
+    <string name="updateService">Update a service</string>
+    <string name="update">UPDATE</string>
     <string name="edittextTipoServicio">Type </string>
     <string name="edittextDescripcionServicios">Description </string>
     <string name="buttonaniadirServicio">Add </string>
@@ -46,7 +50,8 @@
     <!--ACTIVITY_EMP_SERVICIO_DETALLE-->
     <string name="buttonBorrarServicio">Delete</string>
 
-    <!--ACTIVITY_EMP_SERVICIO_DETALLE-->
+    <!--ACTIVITY_EMP_SERVICIO_DETALLE-->Services Details
+    <string name="detailService">Services Details</string>
     <string name="buttonNuevoServicio">New</string>
     <string name="title_activity_usuario_menu2">UsuarioMenu2</string>
     <string name="title_home">Home</string>

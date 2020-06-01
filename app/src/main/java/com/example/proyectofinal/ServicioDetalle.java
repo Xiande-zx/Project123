@@ -43,7 +43,7 @@ public class ServicioDetalle extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
-        mTitle.setText("Service detail");
+        mTitle.setText(getString(R.string.detailService));
 
         Long idService = getIntent().getLongExtra("idService",0);
 

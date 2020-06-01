@@ -51,11 +51,12 @@ public class AddServicio extends AppCompatActivity {
         emp = (Emp)getIntent().getSerializableExtra("Emp");
         idEmp = emp.getId();
 
-
+        //When is Update, will get intent
         serviceNew = (Service) getIntent().getSerializableExtra("servicio");
         if (serviceNew!=null){
-            add.setText("UPDATE");
-            addSer.setText("Update a service");
+            //will change the text
+            add.setText(getString(R.string.update));
+            addSer.setText(getString(R.string.updateService));
             type.setText(serviceNew.getType());
             description.setText(serviceNew.getDescription());
         }
@@ -76,6 +77,7 @@ public class AddServicio extends AppCompatActivity {
                 }
                 ServiceInterface service1 = retrofit.create(ServiceInterface.class);
 
+                //when isnot update, call pots
                 if (!add.getText().toString().equalsIgnoreCase("UPDATE")){
                     Call<Service> repos = service1.postService(service);
 
@@ -94,6 +96,7 @@ public class AddServicio extends AppCompatActivity {
                         }
                     });
                 }else{
+                    //else put
                     serviceNew.setType(ttype);
                     serviceNew.setDescription(ddespriprion);
                     Call<Service> repos = service1.putService(serviceNew);
@@ -118,7 +121,7 @@ public class AddServicio extends AppCompatActivity {
     }
     public void error(String str){
         Context context = getApplicationContext();
-        CharSequence text = "El camp "+str+" no pot estar buit!";
+        CharSequence text = ""+str+" cannot be empty!!";
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();

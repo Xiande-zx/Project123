@@ -103,6 +103,7 @@ public class UsuarioDetalle extends AppCompatActivity {
             }
         });
 
+        //go menu
         verServicios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

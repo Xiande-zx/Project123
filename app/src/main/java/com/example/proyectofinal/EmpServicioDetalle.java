@@ -43,12 +43,13 @@ public class EmpServicioDetalle extends AppCompatActivity {
         update=findViewById(R.id.button13);
         back=findViewById(R.id.button12);
 
+        //toolbar
         Toolbar toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
-        mTitle.setText("Services Details");
+        mTitle.setText(getString(R.string.detailService));
 
         final Long idService = getIntent().getLongExtra("idService",0);
         emp = (Emp) getIntent().getSerializableExtra("Emp");
@@ -102,6 +103,7 @@ public class EmpServicioDetalle extends AppCompatActivity {
         });
     }
 
+    //show alert when you want delete a service
     public void showAlertDialogButtonClicked() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("DELETE SERVICE");
@@ -114,7 +116,6 @@ public class EmpServicioDetalle extends AppCompatActivity {
                 repos.enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
-
                         Intent intent = new Intent(EmpServicioDetalle.this,EmpMenu.class);
                         intent.putExtra("Emp",emp);
                         startActivity(intent);

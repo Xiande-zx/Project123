@@ -57,6 +57,7 @@ public class UsuarioMenu extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                // a bottom navigation, will get the botton id that you click
                 switch (item.getItemId()){
                     case R.id.empresa1:
                         Intent intent = new Intent(getApplicationContext(), EmpresaListado.class);
@@ -80,8 +81,6 @@ public class UsuarioMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
 
         if(retrofit==null){
             retrofit = new Retrofit.Builder()
@@ -134,7 +133,6 @@ public class UsuarioMenu extends AppCompatActivity {
                                 startActivity(activity2Intent);
                             }
                         });
-
                     }
                     @Override
                     public void afterTextChanged(Editable s) {
