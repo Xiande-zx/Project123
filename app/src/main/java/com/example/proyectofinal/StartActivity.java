@@ -71,7 +71,6 @@ public class StartActivity extends AppCompatActivity {
                                 .build();
                     }
                     UserInterface user = retrofit.create(UserInterface.class);
-
                     Call<ArrayList<User>> repos = user.listEmp();
 
                     repos.enqueue(new Callback<ArrayList<User>>() {
@@ -112,7 +111,6 @@ public class StartActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), String.format("KO"), Toast.LENGTH_SHORT).show();
                         }
                     });
-
                 }
             }
         });

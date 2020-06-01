@@ -20,8 +20,6 @@
         <activity android:name=".EmpMenu"
             android:windowSoftInputMode="stateHidden|adjustPan"/>
         <activity android:name=".EmpLogin" />
-        <activity android:name=".ServicioListado"
-            android:windowSoftInputMode="stateHidden|adjustPan"/>
         <activity android:name=".EmpresaDetalle" />
         <activity android:name=".ServicioDetalle"
             />

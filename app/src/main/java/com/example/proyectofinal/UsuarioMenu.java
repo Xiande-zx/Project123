@@ -124,6 +124,7 @@ public class UsuarioMenu extends AppCompatActivity {
                         }
                         final USAdapter usAdapter1 = new USAdapter(UsuarioMenu.this, list1);
                         listView.setAdapter(usAdapter1);
+
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -131,9 +132,9 @@ public class UsuarioMenu extends AppCompatActivity {
                                 Intent activity2Intent = new Intent(getApplicationContext(), ServicioDetalle.class);
                                 activity2Intent.putExtra("idService", idService);
                                 startActivity(activity2Intent);
-
                             }
                         });
+
                     }
                     @Override
                     public void afterTextChanged(Editable s) {

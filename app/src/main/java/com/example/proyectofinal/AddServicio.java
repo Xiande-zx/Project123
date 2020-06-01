@@ -26,12 +26,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AddServicio extends AppCompatActivity {
 
-    EditText type;
-    EditText description;
-
+    EditText type,description;
     String ttype;
     String ddespriprion;
-
     Button add;
     Emp emp;
     Long idEmp;
@@ -46,13 +43,14 @@ public class AddServicio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_servicio);
 
-        type=findViewById(R.id.editText10);
+        type=findViewById(R.id.editTexttype);
         description=findViewById(R.id.editText11);
         add=findViewById(R.id.button15);
         addSer=findViewById(R.id.textView39);
 
         emp = (Emp)getIntent().getSerializableExtra("Emp");
         idEmp = emp.getId();
+
 
         serviceNew = (Service) getIntent().getSerializableExtra("servicio");
         if (serviceNew!=null){
@@ -61,7 +59,6 @@ public class AddServicio extends AppCompatActivity {
             type.setText(serviceNew.getType());
             description.setText(serviceNew.getDescription());
         }
-
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override

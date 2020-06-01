@@ -52,6 +52,7 @@ public class EmpEmpDetalle extends AppCompatActivity {
             }
         });
 
+        //Add toobar
         Toolbar toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -59,6 +60,7 @@ public class EmpEmpDetalle extends AppCompatActivity {
         TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
         mTitle.setText("COMPANY DETAIL");
 
+        //get id Company
         Long idEmp = getIntent().getLongExtra("idEmp",0);
 
         if(retrofit==null){
@@ -75,7 +77,6 @@ public class EmpEmpDetalle extends AppCompatActivity {
             @Override
             public void onResponse(Call<Emp> call, Response<Emp> response) {
                 emp = response.body();
-
                 name.setText(emp.getName());
                 userName.setText(emp.getUserName());
                 description.setText(emp.getDescription());
@@ -85,6 +86,7 @@ public class EmpEmpDetalle extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call<Emp> call, Throwable t) {
+                //if connection fail will show time out
                 Toast.makeText(getApplicationContext(), String.format("Time Out"), Toast.LENGTH_SHORT).show();
             }
         });

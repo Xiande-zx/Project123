@@ -85,18 +85,16 @@ public class EmpMenu extends AppCompatActivity {
             }
         });
 
-
-
         if(retrofit==null){
             retrofit = new Retrofit.Builder()
                     .baseUrl(getString(R.string.url))
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
-
         ServiceInterface service1 = retrofit.create(ServiceInterface.class);
 
         Call<ArrayList<Service>> repos = service1.listService();
+
 
         repos.enqueue(new Callback<ArrayList<Service>>() {
             @Override
@@ -110,20 +108,16 @@ public class EmpMenu extends AppCompatActivity {
                     }
                 }
                     usAdapter = new USAdapter(EmpMenu.this, list2);
-
                     listView.setAdapter(usAdapter);
 
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Long idService = list2.get(position).getId();
-                        Intent activity2Intent = new Intent(getApplicationContext(), EmpServicioDetalle.class);
-                        activity2Intent.putExtra("idService", idService);
-                        activity2Intent.putExtra("Emp",emp);
-                        startActivity(activity2Intent);
+                        intent(idService,emp);
                     }
                 });
-
+                //when write in search
                     search.addTextChangedListener(new TextWatcher() {
                         @Override
                         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -144,14 +138,10 @@ public class EmpMenu extends AppCompatActivity {
                                 @Override
                                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                     Long idService = list1.get(position).getId();
-                                    Intent activity2Intent = new Intent(getApplicationContext(), EmpServicioDetalle.class);
-                                    activity2Intent.putExtra("idService", idService);
-                                    activity2Intent.putExtra("Emp",emp);
-                                    startActivity(activity2Intent);
+                                    intent(idService,emp);
                                 }
                             });
                         }
-
                         @Override
                         public void afterTextChanged(Editable s) {
                         }
@@ -163,6 +153,13 @@ public class EmpMenu extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), String.format("Time Out"), Toast.LENGTH_SHORT).show();
             }
         });
+        }
+
+        private void intent(Long idService, Emp emp){
+            Intent activity2Intent = new Intent(getApplicationContext(), EmpServicioDetalle.class);
+            activity2Intent.putExtra("idService", idService);
+            activity2Intent.putExtra("Emp",emp);
+            startActivity(activity2Intent);
         }
     }
 

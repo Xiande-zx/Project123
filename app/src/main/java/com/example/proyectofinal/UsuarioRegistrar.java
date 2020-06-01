@@ -108,7 +108,6 @@ public class UsuarioRegistrar extends AppCompatActivity {
                     UserInterface service = retrofit.create(UserInterface.class);
                     User user2 = new User(userName,password,phone,email,true);
 
-
                     if (detalleUsuario.getText().toString().equalsIgnoreCase("create")){
                         Call<User> repos = service.postUser(user2);
                         repos.enqueue(new Callback<User>() {

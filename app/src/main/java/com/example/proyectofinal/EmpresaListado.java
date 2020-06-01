@@ -52,6 +52,7 @@ public class EmpresaListado extends AppCompatActivity {
         buscador =(EditText) findViewById(R.id.editText8);
         listView=findViewById(R.id.listEmp);
 
+        //toolbar
         Toolbar toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -61,6 +62,7 @@ public class EmpresaListado extends AppCompatActivity {
 
         final Long idUser = getIntent().getLongExtra("idUser",0);
 
+        //bottom naviga
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
         bottomNavigationView.setSelectedItemId(R.id.empresa1);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -103,25 +105,19 @@ public class EmpresaListado extends AppCompatActivity {
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                         Long temp = list.get(position).getId();
-
-                        Intent activity2Intent = new Intent(getApplicationContext(), EmpresaDetalle.class);
-                        activity2Intent.putExtra("idEmp", temp);
-                        startActivity(activity2Intent);
-
+                        intent(temp);
                     }
                 });
 
                 buscador.addTextChangedListener(new TextWatcher() {
                     @Override
                     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
                     }
 
                     @Override
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        ArrayList<Emp> list1 = new ArrayList<>();
+                        final ArrayList<Emp> list1 = new ArrayList<>();
                         for (int i = 0; i<list.size();i++){
                             if (list.get(i).getName().toLowerCase().contains(s.toString().toLowerCase())){
                                 list1.add(list.get(i));
@@ -129,22 +125,25 @@ public class EmpresaListado extends AppCompatActivity {
                         }
                         final EmpAdapter EmpAdapter1 = new EmpAdapter(EmpresaListado.this, list1);
                         listView.setAdapter(EmpAdapter1);
-                    }
 
+                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                Long temp = list1.get(position).getId();
+                                intent(temp);
+                            }
+                        });
+                    }
                     @Override
                     public void afterTextChanged(Editable s) {
-
                     }
                 });
             }
-
             @Override
             public void onFailure(Call<ArrayList<Emp>> call, Throwable t) {
                 Toast.makeText(getApplicationContext(), String.format("KO"), Toast.LENGTH_SHORT).show();
             }
-
         });
-
 
         verDetalleUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,5 +153,11 @@ public class EmpresaListado extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void intent(Long temp){
+        Intent activity2Intent = new Intent(getApplicationContext(), EmpresaDetalle.class);
+        activity2Intent.putExtra("idEmp", temp);
+        startActivity(activity2Intent);
     }
 }

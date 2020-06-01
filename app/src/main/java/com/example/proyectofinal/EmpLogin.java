@@ -37,8 +37,6 @@ public class EmpLogin extends AppCompatActivity {
     private static Retrofit retrofit = null;
     ArrayList<Emp> list;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,6 +112,7 @@ public class EmpLogin extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent email = new Intent(Intent.ACTION_SEND);
+                    //for sign a new account, need contact with us
                     email.putExtra(Intent.EXTRA_EMAIL, new String[]{ "Xiandeqiu@gmail.com"});
                     email.putExtra(Intent.EXTRA_SUBJECT, "Create Company Account");
                     email.putExtra(Intent.EXTRA_TEXT, "");
