@@ -87,7 +87,7 @@ public class EmpEmpDetalle extends AppCompatActivity {
             @Override
             public void onFailure(Call<Emp> call, Throwable t) {
                 //if connection fail will show time out
-                Toast.makeText(getApplicationContext(), String.format("Time Out"), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), String.format("No connection"), Toast.LENGTH_SHORT).show();
             }
         });
 

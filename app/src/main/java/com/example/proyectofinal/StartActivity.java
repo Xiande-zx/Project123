@@ -106,18 +106,19 @@ public class StartActivity extends AppCompatActivity {
                                 int duration = Toast.LENGTH_SHORT;
                                 Toast toast = Toast.makeText(context, text, duration);
                                 toast.show();
-
                             }
                         }
                         @Override
                         public void onFailure(Call<ArrayList<User>> call, Throwable t) {
-                            Toast.makeText(getApplicationContext(), String.format("KO"), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), String.format("No connection"), Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
             }
         });
     }
+
+
     public void error(String str){
         Context context = getApplicationContext();
         CharSequence text = ""+str+" can not be empty!";

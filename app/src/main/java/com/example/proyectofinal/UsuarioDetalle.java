@@ -90,7 +90,7 @@ public class UsuarioDetalle extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), String.format("Time Out"), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), String.format("No connection"), Toast.LENGTH_SHORT).show();
             }
         });
 

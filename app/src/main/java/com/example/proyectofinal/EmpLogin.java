@@ -100,7 +100,7 @@ public class EmpLogin extends AppCompatActivity {
                             }
                             @Override
                             public void onFailure(Call<ArrayList<Emp>> call, Throwable t) {
-                                Toast.makeText(getApplicationContext(), String.format("Time Out"), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), String.format("No connection"), Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
