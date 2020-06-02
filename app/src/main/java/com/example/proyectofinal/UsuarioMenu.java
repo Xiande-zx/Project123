@@ -139,8 +139,6 @@ public class UsuarioMenu extends AppCompatActivity {
                     }
                 });
 
-
-
             }
             @Override
             public void onFailure(Call<ArrayList<Service>> call, Throwable t) {
